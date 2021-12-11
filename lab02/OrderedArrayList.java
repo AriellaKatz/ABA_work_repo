@@ -2,7 +2,35 @@ import java.util.*;
 
 public class OrderedArrayList{
 
-	public static void order(ArrayList<Integer> aList) {
+	private ArrayList<Integer> aList;
+
+	public int get(int index) {
+		return aList.get(index);
+	}
+
+	public int set(int index, int newVal) {
+		int oldVal = aList.set(index, newVal);
+		order();
+		return oldVal;
+	}
+
+	public boolean add(int newVal) {
+		boolean bool = aList.add(newVal);
+		order();
+		return bool;
+	}
+
+	public int remove(int index) {
+		int oldVal = aList.remove(index);
+		order();
+		return oldVal;
+	}
+
+	public int size() {
+		return aList.size();
+	}
+
+	public void order() {
 		ArrayList bList = new ArrayList();
 		bList = aList;
 		for (int i = 0; i < bList.size(); i++) {
