@@ -10,12 +10,11 @@
   * Attributes: `ArrayList<Integer> aList`
   * `get(int index)`: Returns the element at `index` by calling the `get(int index)` method provided by class ArrayList.
   * `set(int index, int newVal)`: Sets the value of the element at `index` as `newVal` and returns the previous value of
-  that element. Declares local variable `int oldVal` and initializes it as the value returned by the 
-  `set(int index, java.lang.Object o)` method provided by class ArrayList (thereby calling this method for `index` and 
-  `newVal`). Calls `order()` (see below) and returns `oldVal`.
-  * `add(int newVal)`: Returns `true`, as required. Declares local variable `boolean bool` and initializes it as the 
-  value (`true`) returned by the `add(java.lang.Object o`) method provided by class ArrayList (thereby calling this 
-  method for `newVal`). Calls `order()` (see below) and returns `bool`.
+  that element. Declares local variable `int oldVal` and initializes it as the current value. Calls the `set(int index, 
+  java.lang.Object o)` method provided by class ArrayList for `index` and `newVal`. Calls `order()` (see below) and 
+  returns `oldVal`.
+  * `add(int newVal)`: Returns `true`, as required. Calls the `add(java.lang.Object o`) method provided by class 
+  ArrayList for `newVal`. Calls `order()` (see below) and returns `true`.
   * `remove(int index)`: Works the same as `set(int index, int newVal)` except with the `remove(int index)` method 
   provided by class ArrayList.
   * `size()`: Returns the value returned by the `size()` method provided by class ArrayList.
