@@ -15,11 +15,21 @@ DISCO:
    specifically caused the warning) you can enter javac -Xlint:unechecked
    Class.java into the terminal. (However, since it's just a warning, no
    further action is actually necessary.)
+2: We can use "import java.util.ArrayList" to utilize the class ArrayList and
+   its methods.
+3: The add-at-index method previously implemented into our SuperArray classes
+   goes against our attempt to impose the invariant that keeps our elements
+   of the array in ascending order.
+4: We can utilize <> to denote the type that will populate our ordered arrays.
+   This can be known as general typing.
+5:
 QCC:
-0.
+0. How might our classes look if we tried to perform the methods of ArrayList
+   with objects?
+1: What defines robust code and how can we make our code look more robust?
 */
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class ALTester {
 
