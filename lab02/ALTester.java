@@ -25,23 +25,45 @@ public class ALTester {
 
 	/*checks ascending order by returning false if any element is greater
 	than the following one and true if there is no such case*/
-	public static boolean orderCheck(ArrayList<Integer> aList) {
-		for (int i = 0; i < aList.size()-1; i++) {
-			if (aList.get(i) > aList.get(i+1)) { return false; }
+	public static boolean orderCheck(OrderedArrayList oAList) {
+		for (int i = 0; i < oAList.size()-1; i++) {
+			if (oAList.get(i) > oAList.get(i+1)) { return false; }
 		}
 		return true;
 	}
 
 	/*sets each element of an ArrayList to a random integer on the
 	interval [0,100)*/
-	public static void populate(ArrayList<Integer> aList) {
-		for (int i = 0; i < aList.size(); i++) {
-			aList.set(i, (int)(Math.random() * 100));
+	public static void populate(OrderedArrayList oAList) {
+		for (int i = 0; i < oAList.size(); i++) {
+			oAList.set(i, (int)(Math.random() * 100));
 		}
 	}
 
 	public static void main(String[] args) {
-		
+		OrderedArrayList test = new OrderedArrayList();
+		System.out.println("Printing empty OrderedArrayList test...");
+		System.out.println(test);
+		populate(test);
+		System.out.println("Printing populated OrderedArrayList test (populated with random ints)...");
+		System.out.println(test);
+		System.out.println("Is it ordered?");
+		System.out.println(orderCheck(test));
+		test.set(12, (int)(Math.random()*100));
+		System.out.println("Printing OrderedArrayList test post-alteration...");
+		System.out.println(test);
+		System.out.println("Is it ordered?");
+		System.out.println(orderCheck(test));
+		test.add((int)(Math.random()*100));
+		System.out.println("Printing OrderedArrayList test post-add...");
+		System.out.println(test);
+                System.out.println("Is it ordered?");
+                System.out.println(orderCheck(test));
+		test.remove(6);
+		System.out.println("Printing OrderedArrayList test post-remove...");
+		System.out.println(test);
+                System.out.println("Is it ordered?");
+                System.out.println(orderCheck(test));
 	}
 
 }

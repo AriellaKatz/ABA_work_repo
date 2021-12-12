@@ -4,24 +4,34 @@ public class OrderedArrayList{
 
 	private ArrayList<Integer> aList;
 
+	public OrderedArrayList() {
+		aList = new ArrayList<Integer>();
+	}
+
+	public String toString() {
+		return aList.toString();
+	}
+
 	public int get(int index) {
 		return aList.get(index);
 	}
 
 	public int set(int index, int newVal) {
-		int oldVal = aList.set(index, newVal);
+		int oldVal = get(index);
+		aList.set(index, newVal);
 		order();
 		return oldVal;
 	}
 
 	public boolean add(int newVal) {
-		boolean bool = aList.add(newVal);
+		aList.add(newVal);
 		order();
-		return bool;
+		return true;
 	}
 
 	public int remove(int index) {
-		int oldVal = aList.remove(index);
+		int oldVal = get(index);
+		aList.remove(index);
 		order();
 		return oldVal;
 	}
