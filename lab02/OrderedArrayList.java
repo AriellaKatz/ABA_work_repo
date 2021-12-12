@@ -31,7 +31,7 @@ public class OrderedArrayList{
 	}
 
 	public void order() {
-		ArrayList bList = new ArrayList();
+		ArrayList<Integer> bList = new ArrayList<Integer>();
 		bList = aList;
 		for (int i = 0; i < bList.size(); i++) {
 			//Find the minimum of aList:
