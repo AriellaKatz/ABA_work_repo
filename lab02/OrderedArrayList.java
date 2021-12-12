@@ -42,8 +42,8 @@ public class OrderedArrayList{
 
 	public void order() {
 		ArrayList<Integer> bList = new ArrayList<Integer>();
-		bList = aList;
-		for (int i = 0; i < bList.size(); i++) {
+		int size = aList.size();
+		for (int i = 0; i < size; i++) {
 			//Find the minimum of aList:
 			int aMin = aList.get(0);
 			int aMinInd = 0;
@@ -54,7 +54,7 @@ public class OrderedArrayList{
 				}
 			}
 			//Set bList[i] = the minimum of aList:
-			bList.set(i, aMin);
+			bList.add(aMin);
 			//Remove aList's minimum so that for the next
 			//iteration, it'll find the next-smallest element:
 			aList.remove(aMinInd);
