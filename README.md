@@ -18,10 +18,8 @@
   * `remove(int index)`: Works the same as `set(int index, int newVal)` except with the `remove(int index)` method 
   provided by class ArrayList.
   * `size()`: Returns the value returned by the `size()` method provided by class ArrayList.
-  * `order()`: Creates a new `ArrayList<Integer>`, `bList`, and sets it equal to `aList`. (`bList` is now an alias for 
-  `aList`.) Traverses `bList`, setting each element equal to the minimum value of `aList` using the 
-  `set(int index, java.lang.Object o)` method provided by class ArrayList. (With each iteration, the minimum of `aList` 
+  * `order()`: Creates a new `ArrayList<Integer>`, `bList`. Adds the minimum value of `aList` to `bList`, using the `add(java.lang.Object o)` method provided by class ArrayList (with each iteration, the minimum of `aList` 
   is found and later removed, using the `remove(int index)` method provided by class ArrayList, so that the next 
-  iteration will use the next-smallest element). After `bList` has been populated by `aList`'s elements in ascending 
-  order, `aList` is set equal to `bList` (aList is now an alias for `bList`; `aList` is an alias for the ascending-order 
-  version of itself). Does not return anything.
+  iteration will use the next-smallest element), and iterates for the number of elements in the original `aList`. After 
+  `bList` has been populated by `aList`'s elements in ascending order, `aList` is set equal to `bList` (aList is now an 
+  alias for `bList`; `aList` is an alias for the ascending-order version of itself). Does not return anything.
