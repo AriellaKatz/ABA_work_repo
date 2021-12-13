@@ -14,7 +14,7 @@
 
 import java.util.ArrayList;
 
-public class OrderedArrayList2
+public class OrderedArrayList1
 {
 
   // instance of class ArrayList, holding objects of type Integer
@@ -23,7 +23,7 @@ public class OrderedArrayList2
 
   // default constructor
   // initializes instance variables
-  public OrderedArrayList2()
+  public OrderedArrayList1()
   {
 	_data = new ArrayList<Integer>();
   }
@@ -95,13 +95,13 @@ public class OrderedArrayList2
   // main method solely for testing purposes
   public static void main( String[] args )
   {
-    OrderedArrayList2 Franz = new OrderedArrayList2();
+    OrderedArrayList1 Franz = new OrderedArrayList1();
     // testing linear search
     for( int i = 0; i < 15; i++ )
       Franz.addLinear( (int)( 50 * Math.random() ) );
     System.out.println( Franz );
     // testing binary search
-    Franz = new OrderedArrayList2();
+    Franz = new OrderedArrayList1();
     for( int i = 0; i < 15; i++ )
       Franz.addBinary( (int)( 50 * Math.random() ) );
     System.out.println( Franz );
