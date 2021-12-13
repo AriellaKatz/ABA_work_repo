@@ -23,3 +23,17 @@
   iteration will use the next-smallest element), and iterates for the number of elements in the original `aList`. After 
   `bList` has been populated by `aList`'s elements in ascending order, `aList` is set equal to `bList` (aList is now an 
   alias for `bList`; `aList` is an alias for the ascending-order version of itself). Does not return anything.
+* OrderedArrayList2:
+  * Attributes: `ArrayList<Integer> _data`
+  * `toString()`: Returns the String representation of `_data` by calling the `toString()` method provided by class ArrayList.
+  * `remove(int i)`: Declares local variable `int oldVal` and initializes it as the value of the element being removed. Calls
+    the `remove(int index)` method provided by class ArrayList in order to remove the element and returns `oldVal`.
+  * `size()`: Returns the size of `_data` by calling the `size()` method provided by class ArrayList.
+  * `get(int i)`: Returns the value of the element at index `i` by calling the `get(int index)` method provided by class ArrayList.
+  * `addLinear(Integer newVal)`: Conducts a linear search of `_data` for the first element that is greater than the value being added 
+    and calls the `add(int index, int java.lang.Object o)` method provided by class ArrayList to add the new value right before this element. 
+    If no such greater value is found, the new value is appended to the end of `_data` using the `add(int index)` method provided by ArrayList.
+  * `addBinary(Integer newVal)`: Conducts a binary search of `_data` uses indices `start`, `middle`, and `end`. Depending on which half of `_data` `newVal`
+    will fall in, either `start` and `middle` are moved up or `middle` and `end` are moved down until `start` and `end` are at consecutive elements, at which point
+    `newVal` is added depending on whether it's greater than only the value at `start`, both the value at `start` and the one at `end`, or neither. If `_data` is empty,
+    `newVal` is added.
