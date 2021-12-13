@@ -6,7 +6,7 @@
   element, it returns false. If it gets through the entire OrderedArrayList without finding such a case, it returns true.
   * `populate(OrderedArrayList oAList)`: Populates oAList with random ints between 0-100 by traversing it and using the 
   provided `set(int index)` method for each element.
-* OrderedArrayList:
+* OrderedArrayList0: Uses a separate method for ordering the ArrayList
   * Attributes: `ArrayList<Integer> aList`
   * `get(int index)`: Returns the element at `index` by calling the `get(int index)` method provided by class ArrayList.
   * `set(int index, int newVal)`: Sets the value of the element at `index` as `newVal` and returns the previous value of
@@ -23,7 +23,7 @@
   iteration will use the next-smallest element), and iterates for the number of elements in the original `aList`. After 
   `bList` has been populated by `aList`'s elements in ascending order, `aList` is set equal to `bList` (aList is now an 
   alias for `bList`; `aList` is an alias for the ascending-order version of itself). Does not return anything.
-* OrderedArrayList2:
+* OrderedArrayList1: Incorporates ordering into the algorithms
   * Attributes: `ArrayList<Integer> _data`
   * `toString()`: Returns the String representation of `_data` by calling the `toString()` method provided by class ArrayList.
   * `remove(int i)`: Declares local variable `int oldVal` and initializes it as the value of the element being removed. Calls
