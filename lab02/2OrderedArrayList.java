@@ -69,15 +69,25 @@ public class OrderedArrayList
   // uses a binary search to find appropriate index
   public void addBinary(Integer newVal)
   {
-	int start = 0;
-  int middle = (size()-1)/2;
-  int end = size()-1;
-  while (start != middle) {
-    if (newval >= _data.get(middle)) {
-      start = middle;
-      middle += (middle - start) / 2;
-    }
-  }
+        int start = 0;
+        int middle = (size()-1)/2;
+        int end = size()-1;
+        while (start != middle) {
+              if (newVal >= _data.get(middle)) {
+                    start = middle;
+                    middle += (end - middle) / 2;
+              }
+              else {
+                    end = middle;
+                    middle = start + (middle - start) / 2;
+              }
+        }
+        if (newVal >= _data.get(middle)) {
+              _data.add(middle+1, newVal);
+        }
+        else {
+              _data.add(middle, newVal);
+        }
   }
 
   // main method solely for testing purposes
