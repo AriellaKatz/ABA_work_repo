@@ -4,7 +4,7 @@ public class OrderedArrayList{
 
 	private ArrayList<Integer> aList;
 
-	public OrderedArrayList() {
+	public OrderedArrayList0() {
 		aList = new ArrayList<Integer>();
 	}
 
