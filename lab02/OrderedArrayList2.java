@@ -75,7 +75,7 @@ public class OrderedArrayList2
 	        int start = 0;
         	int middle = (size()-1)/2;
 	        int end = size()-1;
-        	while (start != middle) {
+        	while (end - start > 1) {
               		if (newVal >= _data.get(middle)) {
                     		start = middle;
                     		middle += (end - middle) / 2;
@@ -85,12 +85,9 @@ public class OrderedArrayList2
                     		middle = start + (middle - start) / 2;
               		}
         	}
-        	if (newVal >= _data.get(middle)) {
-              		_data.add(middle+1, newVal);
-        	}
-        	else {
-              		_data.add(middle, newVal);
-        	}
+		if (newVal >= _data.get(end)) { _data.add(newVal); }
+		else if (newVal >= _data.get(start)) { _data.add(end, newVal); }
+		else { _data.add(start, newVal); }
 	}
 	else { _data.add(newVal); }
   }
