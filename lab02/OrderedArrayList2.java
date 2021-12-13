@@ -14,7 +14,7 @@
 
 import java.util.ArrayList;
 
-public class OrderedArrayList
+public class OrderedArrayList2
 {
 
   // instance of class ArrayList, holding objects of type Integer
@@ -23,7 +23,7 @@ public class OrderedArrayList
 
   // default constructor
   // initializes instance variables
-  public OrderedArrayList()
+  public OrderedArrayList2()
   {
 	_data = new ArrayList<Integer>();
   }
@@ -55,10 +55,12 @@ public class OrderedArrayList
   // uses a linear search to find appropriate index
   public void addLinear(Integer newVal)
   {
-	for (int i = 0; i < size(); i++) {
-		if (newVal < _data.get(i)) {
-			_data.add(i, newVal);
-			return;
+	if (size() > 0) {
+		for (int i = 0; i < size(); i++) {
+			if (newVal < _data.get(i)) {
+				_data.add(i, newVal);
+				return;
+			}
 		}
 	}
 	_data.add(newVal);
@@ -69,42 +71,45 @@ public class OrderedArrayList
   // uses a binary search to find appropriate index
   public void addBinary(Integer newVal)
   {
-        int start = 0;
-        int middle = (size()-1)/2;
-        int end = size()-1;
-        while (start != middle) {
-              if (newVal >= _data.get(middle)) {
-                    start = middle;
-                    middle += (end - middle) / 2;
-              }
-              else {
-                    end = middle;
-                    middle = start + (middle - start) / 2;
-              }
-        }
-        if (newVal >= _data.get(middle)) {
-              _data.add(middle+1, newVal);
-        }
-        else {
-              _data.add(middle, newVal);
-        }
+	if (size() > 0) {
+	        int start = 0;
+        	int middle = (size()-1)/2;
+	        int end = size()-1;
+        	while (start != middle) {
+              		if (newVal >= _data.get(middle)) {
+                    		start = middle;
+                    		middle += (end - middle) / 2;
+              		}
+              		else {
+                    		end = middle;
+                    		middle = start + (middle - start) / 2;
+              		}
+        	}
+        	if (newVal >= _data.get(middle)) {
+              		_data.add(middle+1, newVal);
+        	}
+        	else {
+              		_data.add(middle, newVal);
+        	}
+	}
+	else { _data.add(newVal); }
   }
 
   // main method solely for testing purposes
   public static void main( String[] args )
   {
-    /*-----v-------move-me-down-----------------v--------
-    OrderedArrayList Franz = new OrderedArrayList();
+    OrderedArrayList2 Franz = new OrderedArrayList2();
     // testing linear search
     for( int i = 0; i < 15; i++ )
       Franz.addLinear( (int)( 50 * Math.random() ) );
     System.out.println( Franz );
     // testing binary search
-    Franz = new OrderedArrayList();
+    Franz = new OrderedArrayList2();
     for( int i = 0; i < 15; i++ )
       Franz.addBinary( (int)( 50 * Math.random() ) );
     System.out.println( Franz );
-      =====^====================================^=========*/
+/* 
+     =====^====================================^=========*/
 
   }//end main()
 
